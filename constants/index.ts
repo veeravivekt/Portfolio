@@ -13,10 +13,10 @@ export const LINKS = [
     name: "Home",
     hash: "#home",
   },
-  {
-    name: "About",
-    hash: "#about",
-  }
+  // {
+  //   name: "About",
+  //   hash: "#about",
+  // }
 ] as const;
 
 // External links

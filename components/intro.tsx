@@ -11,6 +11,10 @@ import { HiDownload } from "react-icons/hi";
 import { EXTRA_LINKS, OWNER_NAME } from "@/constants";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
+import { slideInFromTop } from '@/utils/motion'
+import { SparklesIcon } from '@heroicons/react/24/outline'
+
+
 
 const Intro = () => {
  
@@ -36,11 +40,11 @@ const Intro = () => {
             <Image
               src="/profile.png"
               alt={`${OWNER_NAME.split(" ")[0]} portrait`}
-              width={192}
-              height={192}
+              width={256}
+              height={256}
               quality={95}
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-64 w-64 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 
@@ -53,7 +57,7 @@ const Intro = () => {
               delay: 0.1,
               duration: 0.7,
             }}
-            className="absolute text-2xl bottom-0 right-0"
+            className="absolute text-5xl bottom-4 right-4"
           >
             👋
           </motion.span>
@@ -65,10 +69,18 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <b className="font-bold">Hi, I&apos;m {OWNER_NAME.split(" ")[0]}.</b>{" "}
-        I&apos;m a <b className="font-bold">full-stack developer</b> with{" "}
-        <b className="font-bold">2+ years</b> of experience. I enjoy building{" "}
-        <i className="italic">sites and apps</i>
+        {/* <motion.div 
+            variants={slideInFromTop}
+            className='Welcome-box py-[-5px] px-[10px] border border-[#7042f88b] opacity-90'
+            >
+              <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5'/>
+              <h1 className='Welcome-text text-[13px]'>
+                Fullstack Devloper Portfolio
+              </h1>
+            </motion.div> */}
+        <b className="font-bold">Hi, I&apos;m <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400'>Veera Vivek Telagani</span>.</b>{" "}
+        I&apos;m a <b className="font-bold">Full Stack Software Engineer</b> with{" "}
+        <b className="font-bold">2+ years</b> of experience.
       </motion.h1>
 
       <motion.div
